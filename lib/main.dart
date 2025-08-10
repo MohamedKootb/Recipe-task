@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import 'core/di/di.dart';
+import 'core/theming/app_sizer.dart';
+import 'recipe_app.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: Container(),
-    );
-  }
+  setupDependencies();
+
+  // Ensure first frame only after we have a valid screen size
+  await AppSizer.ensureScreenSize();
+
+  runApp(const RecipeApp());
 }

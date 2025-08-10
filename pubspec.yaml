@@ -1,4 +1,4 @@
-name: apollo_task_flutter
+name: recipe_task_flutter
 description: "A new Flutter project."
 
 publish_to: 'none'
@@ -6,55 +6,68 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.7.0
 
 dependencies:
   flutter:
     sdk: flutter
 
-  #State Management
-  provider: ^6.1.2
+  # State Management
+  flutter_bloc: ^9.1.1
 
-  #Network Service
+  # Network Service
   dio: ^5.7.0
-  requests_inspector: ^4.1.1
+  pretty_dio_logger: ^1.4.0
 
-  #JSON
+  # A library that checks for internet by opening a socket to a list of specified addresses
+  internet_connection_checker: ^1.0.0+1
+  
+  # JSON
   json_annotation: ^4.9.0
 
-  #Storage
-  flutter_secure_storage: ^9.2.2
-
-  #Images Utils
+  # Images Utils
   flutter_svg: ^2.0.10+1
   cached_network_image: ^3.4.0
-  flutter_launcher_icons: ^0.14.1
-  photo_view: ^0.15.0
 
-  #UI Components
-  shimmer: ^3.0.0
-  fluttertoast: ^8.2.8
-  auto_size_text: ^3.0.0
-  focus_detector: ^2.0.1
-  carousel_slider: ^5.0.0
+  # Dependency Injection
+  get_it: ^8.2.0
+
+  # UI Components
+  skeletonizer: ^1.4.3
   cupertino_icons: ^1.0.8
-  pull_to_refresh: ^2.0.0
-  flutter_utils_code: ^0.1.2
-  flutter_rating_bar: ^4.0.1
-  flutter_screenutil: ^5.9.3
-  flutter_inappwebview: ^6.1.5
-  modal_bottom_sheet: ^3.0.0
-  scrollable_positioned_list: ^0.3.8
-  flutter_staggered_grid_view: ^0.7.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^2.4.11
+  flutter_lints: ^4.0.0
+  
+  # Automatically generate code for converting to and from JSON by annotating Dart classes.
   json_serializable: ^6.8.0
 
-  flutter_lints: ^4.0.0
+  # A build system for Dart code generation and modular compilation.
+  build_runner: ^2.4.11
+
+  # A Dart mock library which simplifies mocking for testing
+  mocktail: ^1.0.3
 
 flutter:
-
   uses-material-design: true
+
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: inter
+      fonts:
+        - asset: assets/fonts/Inter-Black.otf
+          weight: 900
+        - asset: assets/fonts/Inter-ExtraBold.otf
+          weight: 800
+        - asset: assets/fonts/Inter-Bold.otf
+          weight: 700
+        - asset: assets/fonts/Inter-SemiBold.otf
+          weight: 600
+        - asset: assets/fonts/Inter-Medium.otf
+          weight: 500
+        - asset: assets/fonts/Inter-Regular.otf
+          weight: 400
